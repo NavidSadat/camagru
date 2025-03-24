@@ -1,0 +1,31 @@
+version: '3'
+services:
+  nginx:
+    image: wyveo/nginx-php-fpm:php82
+    volumes:
+      - ./nginx:/etc/nginx/
+      - ./src:/usr/share/nginx/html
+    ports:
+      - '80:80'
+  db:
+    container_name: db
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE=camagru
+      - MYSQL_ROOT_PASSWORD=camagru
+      - MYSQL_USER=camagru
+      - MYSQL_PASSWORD=camagru
+    ports:
+      - "9906:3306"
+    volumes:
+      - ./my-datavolume:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    restart: always
+    environment:
+      - PMA_HOST=db
+    depends_on:
+      - db
