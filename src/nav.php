@@ -7,9 +7,9 @@
 </head>
 <body>
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Singin</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="Model/model.php">About</a></li>
+        <li><a href="Control/signin.php">Singin</a></li>
     </ul>
 </body>
 </html>
