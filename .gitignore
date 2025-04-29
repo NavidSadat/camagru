@@ -1,0 +1,12 @@
+# Ignore all backups by default
+db_backups/*
+
+# But include this specific file (tracked backup)
+!db_backups/backup.sql
+
+# Ignore Docker MySQL volume
+local/
+
+# Ignore environment files
+.env
+
